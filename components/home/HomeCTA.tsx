@@ -52,13 +52,18 @@ export default function HomeCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          {/* Color accent dots */}
-          <div className="flex items-center justify-center gap-2 mb-8">
-            {["#8B5CF6", "#3B82F6", "#10B981", "#F59E0B"].map((color) => (
+          {/* Color accent dots — fixed delays, no Math.random() */}
+          <div className="flex items-center justify-center gap-2 mb-6 sm:mb-8">
+            {[
+              { color: "#8B5CF6", delay: 0.0 },
+              { color: "#3B82F6", delay: 0.3 },
+              { color: "#10B981", delay: 0.6 },
+              { color: "#F59E0B", delay: 0.9 },
+            ].map(({ color, delay }) => (
               <motion.div
                 key={color}
                 animate={{ scale: [1, 1.4, 1], opacity: [0.7, 1, 0.7] }}
-                transition={{ duration: 2, repeat: Infinity, delay: Math.random() * 1 }}
+                transition={{ duration: 2, repeat: Infinity, delay }}
                 className="w-2.5 h-2.5 rounded-full"
                 style={{ backgroundColor: color, boxShadow: `0 0 10px ${color}` }}
               />

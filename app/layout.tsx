@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -59,14 +59,21 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#020617",
+};
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="bg-[#020617] text-slate-100 overflow-x-hidden">
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} style={{ overflowX: "hidden" }}>
+      <body className="bg-[#020617] text-slate-100 overflow-x-hidden max-w-[100vw]">
         <CartProvider>
           <IntroWrapper />
           <Navbar />

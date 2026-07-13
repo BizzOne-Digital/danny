@@ -44,17 +44,18 @@ export default function NotFound() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full max-w-xs mx-auto sm:max-w-none">
           <Link
             href="/"
-            className="btn-primary rounded-xl px-8 py-3.5 text-sm font-bold"
-            style={{ color: "white" }}
+            className="btn-primary rounded-xl px-8 py-3.5 text-sm font-bold text-center"
+            style={{ color: "white", WebkitTextFillColor: "white" }}
           >
             Back to Home
           </Link>
           <Link
             href="/shop"
-            className="btn-secondary rounded-xl px-8 py-3.5 text-sm font-bold"
+            className="btn-secondary rounded-xl px-8 py-3.5 text-sm font-bold text-center"
+            style={{ color: "white", WebkitTextFillColor: "white" }}
           >
             Browse Products
           </Link>

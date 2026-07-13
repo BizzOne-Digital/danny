@@ -114,8 +114,12 @@ export default function FeaturedProducts() {
         >
           <Link
             href="/shop"
-            className="btn-primary rounded-xl px-8 py-4 text-base gap-2 [&]:text-white [&:hover]:text-white [&:focus]:text-white"
-            style={{ color: "white" }}
+            className="inline-flex items-center justify-center gap-2 rounded-xl px-8 py-4 text-base font-bold transition-all hover:opacity-90"
+            style={{
+              background: "linear-gradient(135deg, #8B5CF6, #3B82F6)",
+              color: "white",
+              WebkitTextFillColor: "white",
+            }}
           >
             Browse All Products
             <ArrowRight className="w-4 h-4" />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ShoppingCart, Eye, Package, CheckCircle, TrendingDown } from "lucide-react";
 import { Product, COLOR_MAP } from "@/types";
@@ -79,12 +80,23 @@ export default function ProductCard({ product, onQuickView, index = 0 }: Props) 
           }}
         />
 
-        {/* Product bottle mockup */}
+        {/* Product image (fallback to bottle mockup) */}
         <motion.div
-          whileHover={{ rotate: [-2, 2, -2], transition: { duration: 0.4, repeat: Infinity } }}
-          className="relative z-10"
+          whileHover={{ scale: 1.03, transition: { duration: 0.3 } }}
+          className="relative z-10 w-full h-full flex items-center justify-center p-4"
         >
-          <ProductBottleMockup colorHex={colors.hex} colorCode={product.colorCode} name={product.name} />
+          {product.image ? (
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={220}
+              height={220}
+              className="object-contain max-h-full w-auto drop-shadow-lg"
+              sizes="(max-width: 640px) 50vw, 220px"
+            />
+          ) : (
+            <ProductBottleMockup colorHex={colors.hex} colorCode={product.colorCode} name={product.name} />
+          )}
         </motion.div>
 
         {/* Quick view overlay — visible on touch devices */}

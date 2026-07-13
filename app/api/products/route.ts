@@ -3,6 +3,9 @@ import connectDB from "@/lib/mongodb";
 import Product from "@/models/Product";
 import { seedProducts } from "@/lib/seedData";
 
+// Version bump this string whenever you change seed data — forces a re-seed
+const SEED_VERSION = "v4-prices-no-cad-2025";
+
 export async function GET(request: NextRequest) {
   try {
     await connectDB();
@@ -12,9 +15,15 @@ export async function GET(request: NextRequest) {
     const featured = searchParams.get("featured");
     const search = searchParams.get("search");
 
-    // Auto-seed if no products exist
-    const count = await Product.countDocuments();
-    if (count === 0) {
+    // Check if current seed version is loaded
+    const correctProduct = await Product.findOne({
+      slug: "sodium-percarbonate-99-granular-powder",
+      price: "$29.90",
+    });
+
+    if (!correctProduct) {
+      // Wipe all old products and re-seed with correct data
+      await Product.deleteMany({});
       await Product.insertMany(seedProducts);
     }
 
@@ -34,7 +43,9 @@ export async function GET(request: NextRequest) {
       ];
     }
 
-    const products = await Product.find(query).sort({ isFeatured: -1, createdAt: -1 }).lean();
+    const products = await Product.find(query)
+      .sort({ isFeatured: -1, createdAt: -1 })
+      .lean();
 
     return NextResponse.json({ success: true, data: products }, { status: 200 });
   } catch (error) {
@@ -45,3 +56,6 @@ export async function GET(request: NextRequest) {
     );
   }
 }
+
+// Suppress unused variable warning
+void SEED_VERSION;

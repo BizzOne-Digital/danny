@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ShoppingCart, Package2, CheckCircle, TrendingDown, ArrowRight, Beaker } from "lucide-react";
 import { Product, COLOR_MAP } from "@/types";
 import { useCart } from "./CartProvider";
 import ProductBottleMockup from "./ProductBottleMockup";
-import Link from "next/link";
 
 interface Props {
   product: Product | null;
@@ -67,7 +68,7 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 30 }}
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            className="relative w-full max-w-2xl max-h-[92vh] sm:max-h-[90vh] overflow-y-auto glass-dark rounded-t-3xl sm:rounded-3xl border border-white/10 z-10"
+            className="relative w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto glass-dark rounded-t-3xl sm:rounded-3xl border border-white/10 z-10"
             style={{ boxShadow: `0 40px 80px -20px ${colors.hex}40, 0 0 0 1px ${colors.hex}20` }}
           >
             {/* Color accent top bar */}
@@ -85,10 +86,10 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
               <X className="w-4 h-4 text-white" />
             </button>
 
-            <div className="grid md:grid-cols-2 gap-0">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
               {/* Left: Product visual */}
               <div
-                className="relative flex items-center justify-center p-6 sm:p-10 rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none min-h-[200px] sm:min-h-[260px]"
+                className="relative flex items-center justify-center p-6 sm:p-10 rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none min-h-[180px] sm:min-h-[240px]"
                 style={{
                   background: `linear-gradient(135deg, ${colors.hex}15, ${colors.hex}05)`,
                   borderBottom: "1px solid rgba(255,255,255,0.06)",
@@ -102,11 +103,23 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
                 />
 
                 <motion.div
-                  animate={{ y: [0, -10, 0] }}
+                  animate={{ y: [0, -8, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative z-10"
+                  className="relative z-10 w-full max-w-[260px] aspect-square flex items-center justify-center"
                 >
-                  <ProductBottleMockup colorHex={colors.hex} colorCode={product.colorCode} name={product.name} size="lg" />
+                  {product.image ? (
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      width={280}
+                      height={280}
+                      className="object-contain max-h-full w-auto drop-shadow-xl"
+                      sizes="280px"
+                      priority
+                    />
+                  ) : (
+                    <ProductBottleMockup colorHex={colors.hex} colorCode={product.colorCode} name={product.name} size="lg" />
+                  )}
                 </motion.div>
 
                 {/* Floating color badge */}
