@@ -164,7 +164,7 @@ export default function ServicesPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#020617]">
+    <div className="min-h-screen bg-[#F4F2F8]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-28 pb-12 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0">
@@ -197,7 +197,7 @@ export default function ServicesPage() {
             </div>
 
             <h1
-              className="text-3xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight mb-4 sm:mb-5"
+              className="text-3xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight mb-4 sm:mb-5"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Wholesale,{" "}
@@ -215,7 +215,7 @@ export default function ServicesPage() {
               &amp; Product Supply
             </h1>
 
-            <p className="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
+            <p className="text-slate-600 text-base sm:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 px-2">
               Cleaning chemicals in pure and concentrated form for buyers who need flexibility,
               volume, and reliability.
             </p>
@@ -241,18 +241,18 @@ export default function ServicesPage() {
       </section>
 
       {/* Mobile sticky service nav */}
-      <div className="lg:hidden sticky top-[4.5rem] z-30 border-b border-white/8 bg-[#020617]/95 backdrop-blur-md">
+      <div className="lg:hidden sticky top-[4.5rem] z-30 border-b border-slate-200 bg-[#F4F2F8]/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 py-2 overflow-x-auto scrollbar-none flex gap-2">
           {services.map((s) => (
             <button
               key={s.id}
               onClick={() => scrollToService(s.id)}
               className={`flex-shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full border transition-all ${
-                activeService === s.id ? "text-white" : "text-slate-400"
+                activeService === s.id ? "text-slate-900" : "text-slate-500"
               }`}
               style={{
-                backgroundColor: activeService === s.id ? `${s.color}25` : "rgba(255,255,255,0.04)",
-                borderColor: activeService === s.id ? `${s.color}50` : "rgba(255,255,255,0.1)",
+                backgroundColor: activeService === s.id ? `${s.color}25` : "#FFFFFF",
+                borderColor: activeService === s.id ? `${s.color}50` : "rgba(148,163,184,0.35)",
                 color: activeService === s.id ? s.color : undefined,
               }}
             >
@@ -278,8 +278,7 @@ export default function ServicesPage() {
                     onClick={() => scrollToService(s.id)}
                     className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-left transition-all duration-200 ${
                       activeService === s.id
-                        ? "text-white"
-                        : "text-slate-500 hover:text-slate-300"
+                        ? "text-slate-900" : "text-slate-500 hover:text-slate-700"
                     }`}
                     style={
                       activeService === s.id
@@ -349,7 +348,7 @@ export default function ServicesPage() {
                           {service.subtitle}
                         </span>
                         <h2
-                          className="text-xl sm:text-2xl md:text-3xl font-black text-white mt-1 leading-snug"
+                          className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 mt-1 leading-snug"
                           style={{ fontFamily: "var(--font-space-grotesk)" }}
                         >
                           {service.title}
@@ -359,10 +358,10 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Body */}
-                  <div className="p-4 sm:p-8 bg-white/[0.02]">
+                  <div className="p-4 sm:p-8 bg-white">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
                       <div>
-                        <p className="text-slate-300 text-base leading-relaxed mb-6">
+                        <p className="text-slate-600 text-base leading-relaxed mb-6">
                           {service.description}
                         </p>
                         <Link
@@ -381,7 +380,7 @@ export default function ServicesPage() {
                         </p>
                         <ul className="space-y-2">
                           {service.features.map((feature) => (
-                            <li key={feature} className="flex items-center gap-3 text-sm text-slate-300">
+                            <li key={feature} className="flex items-center gap-3 text-sm text-slate-600">
                               <div
                                 className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0"
                                 style={{ backgroundColor: `${service.color}20` }}
@@ -405,7 +404,7 @@ export default function ServicesPage() {
       {/* Bottom CTA */}
       <section
         className="relative py-14 sm:py-20 overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0f0520, #020617, #050d1a)" }}
+        style={{ background: "linear-gradient(135deg, #EEF2FF, #F5F3FF, #ECFDF5)" }}
       >
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 opacity-20" style={{ background: "radial-gradient(ellipse at 50% 50%, #8B5CF6, transparent 60%)" }} />
@@ -416,13 +415,13 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4 sm:mb-5" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4 sm:mb-5" style={{ fontFamily: "var(--font-space-grotesk)" }}>
               Ready to Work with{" "}
               <span style={{ background: "linear-gradient(135deg, #8B5CF6, #3B82F6)", backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 Calico Canada?
               </span>
             </h2>
-            <p className="text-slate-300 text-base sm:text-lg mb-6 sm:mb-8 px-2">
+            <p className="text-slate-600 text-base sm:text-lg mb-6 sm:mb-8 px-2">
               Contact Danny and the Calico Canada team to discuss your cleaning chemical needs — wholesale, bulk, or custom orders.
             </p>
             <Link href="/contact" className="btn-primary rounded-xl text-base px-8 py-4 gap-2" style={{ color: "white" }}>

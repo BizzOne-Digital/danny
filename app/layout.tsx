@@ -63,7 +63,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#020617",
+  themeColor: "#F4F2F8",
 };
 
 export default function RootLayout({
@@ -73,7 +73,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} style={{ overflowX: "hidden" }}>
-      <body className="bg-[#020617] text-slate-100 overflow-x-hidden max-w-[100vw]">
+      <body className="bg-[#F4F2F8] text-slate-800 overflow-x-hidden max-w-[100vw]">
         <CartProvider>
           <IntroWrapper />
           <Navbar />

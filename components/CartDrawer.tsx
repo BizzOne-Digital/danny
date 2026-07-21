@@ -23,7 +23,7 @@ export default function CartDrawer() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
             onClick={closeCart}
           />
 
@@ -33,13 +33,13 @@ export default function CartDrawer() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-            className="absolute right-0 top-0 bottom-0 w-full max-w-md glass-dark border-l border-white/10 flex flex-col"
+            className="absolute right-0 top-0 bottom-0 w-full max-w-md glass-dark border-l border-slate-200 flex flex-col"
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10">
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b border-slate-200">
               <div className="flex items-center gap-3">
-                <ShoppingCart className="w-5 h-5 text-purple-400" />
-                <h2 className="text-lg font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                <ShoppingCart className="w-5 h-5 text-purple-500" />
+                <h2 className="text-lg font-bold text-slate-900" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                   {showCheckout ? "Order Inquiry" : `Cart (${items.length})`}
                 </h2>
               </div>
@@ -49,9 +49,9 @@ export default function CartDrawer() {
                   setShowCheckout(false);
                 }}
                 aria-label="Close cart"
-                className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                className="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors"
               >
-                <X className="w-4 h-4 text-white" />
+                <X className="w-4 h-4 text-slate-700" />
               </button>
             </div>
 
@@ -59,7 +59,7 @@ export default function CartDrawer() {
               <div className="flex-1 overflow-y-auto p-6">
                 <button
                   onClick={() => setShowCheckout(false)}
-                  className="flex items-center gap-2 text-slate-400 hover:text-white text-sm mb-6 transition-colors"
+                  className="flex items-center gap-2 text-slate-500 hover:text-slate-900 text-sm mb-6 transition-colors"
                 >
                   ← Back to cart
                 </button>
@@ -77,11 +77,11 @@ export default function CartDrawer() {
                 <div className="flex-1 overflow-y-auto">
                   {isEmpty ? (
                     <div className="flex flex-col items-center justify-center h-full gap-4 text-center p-8">
-                      <div className="w-20 h-20 rounded-2xl bg-white/5 flex items-center justify-center">
-                        <Package className="w-10 h-10 text-slate-600" />
+                      <div className="w-20 h-20 rounded-2xl bg-slate-100 flex items-center justify-center">
+                        <Package className="w-10 h-10 text-slate-400" />
                       </div>
-                      <p className="text-slate-400 font-medium">Your cart is empty</p>
-                      <p className="text-slate-600 text-sm">Add products to start your inquiry</p>
+                      <p className="text-slate-600 font-medium">Your cart is empty</p>
+                      <p className="text-slate-500 text-sm">Add products to start your inquiry</p>
                       <button
                         onClick={closeCart}
                         className="btn-primary text-sm py-2.5 px-6 rounded-xl mt-2"
@@ -115,7 +115,7 @@ export default function CartDrawer() {
                                 </div>
 
                                 <div className="flex-1 min-w-0">
-                                  <p className="text-white font-medium text-sm leading-tight truncate">
+                                  <p className="text-slate-900 font-medium text-sm leading-tight truncate">
                                     {item.name}
                                   </p>
                                   <div className="flex items-center gap-2 mt-1">
@@ -129,40 +129,40 @@ export default function CartDrawer() {
                                       <span className="text-xs text-slate-500">{item.selectedSize}</span>
                                     )}
                                   </div>
-                                  <p className="text-slate-400 text-xs mt-1">{item.price}</p>
+                                  <p className="text-slate-500 text-xs mt-1">{item.price}</p>
                                 </div>
 
                                 <button
                                   onClick={() => removeItem(item.id)}
                                   aria-label="Remove item"
-                                  className="text-slate-600 hover:text-red-400 transition-colors flex-shrink-0"
+                                  className="text-slate-400 hover:text-red-500 transition-colors flex-shrink-0"
                                 >
                                   <Trash2 className="w-4 h-4" />
                                 </button>
                               </div>
 
                               {/* Quantity control */}
-                              <div className="flex items-center justify-between mt-3 pt-3 border-t border-white/5">
+                              <div className="flex items-center justify-between mt-3 pt-3 border-t border-slate-100">
                                 <div className="flex items-center gap-2">
                                   <button
                                     onClick={() => updateQuantity(item.id, item.quantity - 1)}
                                     aria-label="Decrease quantity"
-                                    className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                                    className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors"
                                   >
-                                    <Minus className="w-3 h-3 text-white" />
+                                    <Minus className="w-3 h-3 text-slate-700" />
                                   </button>
-                                  <span className="text-white font-bold w-6 text-center text-sm">
+                                  <span className="text-slate-900 font-bold w-6 text-center text-sm">
                                     {item.quantity}
                                   </span>
                                   <button
                                     onClick={() => updateQuantity(item.id, item.quantity + 1)}
                                     aria-label="Increase quantity"
-                                    className="w-7 h-7 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+                                    className="w-7 h-7 rounded-lg bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors"
                                   >
-                                    <Plus className="w-3 h-3 text-white" />
+                                    <Plus className="w-3 h-3 text-slate-700" />
                                   </button>
                                 </div>
-                                <span className="text-slate-400 text-xs">
+                                <span className="text-slate-500 text-xs">
                                   Qty: {item.quantity}
                                 </span>
                               </div>
@@ -176,9 +176,9 @@ export default function CartDrawer() {
 
                 {/* Footer */}
                 {!isEmpty && (
-                  <div className="p-4 sm:p-6 border-t border-white/10 space-y-3">
+                  <div className="p-4 sm:p-6 border-t border-slate-200 space-y-3">
                     <div className="glass-card rounded-xl p-3 text-center">
-                      <p className="text-slate-400 text-xs">
+                      <p className="text-slate-500 text-xs">
                         Pricing is custom per order. Submit inquiry for a quote.
                       </p>
                     </div>

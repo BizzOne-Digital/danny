@@ -50,15 +50,15 @@ export default function ProductCard({ product, onQuickView, index = 0 }: Props) 
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.43, 0.13, 0.23, 0.96] }}
       whileHover={{ y: -6, transition: { duration: 0.25 } }}
       onClick={() => onQuickView(product)}
-      className="group relative glass-card rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-white/15"
+      className="group relative glass-card rounded-3xl overflow-hidden cursor-pointer transition-all duration-300 hover:border-slate-200"
       style={{
-        boxShadow: `0 0 0 1px rgba(255,255,255,0.06)`,
+        boxShadow: `0 0 0 1px rgba(148,163,184,0.15)`,
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.boxShadow = `0 20px 60px -12px ${colors.hex}40, 0 0 0 1px ${colors.hex}30`;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = `0 0 0 1px rgba(255,255,255,0.06)`;
+        e.currentTarget.style.boxShadow = `0 0 0 1px rgba(148,163,184,0.15)`;
       }}
     >
       {/* Color accent bar */}
@@ -119,7 +119,7 @@ export default function ProductCard({ product, onQuickView, index = 0 }: Props) 
 
         {/* Bulk badge */}
         {product.bulkAvailable && (
-          <div className="absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-full bg-white/10 text-white/80 border border-white/15">
+          <div className="absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-full bg-white/90 text-slate-700 border border-slate-200 shadow-sm">
             Bulk Available
           </div>
         )}
@@ -146,14 +146,14 @@ export default function ProductCard({ product, onQuickView, index = 0 }: Props) 
 
         {/* Product name */}
         <h3
-          className="text-white font-bold text-base leading-snug mb-2 group-hover:text-slate-100 transition-colors line-clamp-2"
+          className="text-slate-900 font-bold text-base leading-snug mb-2 group-hover:text-slate-700 transition-colors line-clamp-2"
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
           {product.name}
         </h3>
 
         {/* Short description */}
-        <p className="text-slate-400 text-sm leading-relaxed line-clamp-2 mb-4">
+        <p className="text-slate-600 text-sm leading-relaxed line-clamp-2 mb-4">
           {product.shortDescription}
         </p>
 
@@ -163,19 +163,19 @@ export default function ProductCard({ product, onQuickView, index = 0 }: Props) 
             {product.sizes.slice(0, 3).map((size) => (
               <span
                 key={size}
-                className="text-xs text-slate-500 bg-white/5 px-2 py-0.5 rounded-md border border-white/8"
+                className="text-xs text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md border border-slate-200"
               >
                 {size}
               </span>
             ))}
             {product.sizes.length > 3 && (
-              <span className="text-xs text-slate-600 px-2 py-0.5">+{product.sizes.length - 3}</span>
+              <span className="text-xs text-slate-500 px-2 py-0.5">+{product.sizes.length - 3}</span>
             )}
           </div>
         )}
 
         {/* Price and add to cart */}
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-white/6">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-3 border-t border-slate-100">
           <div>
             <p className="text-slate-500 text-xs mb-0.5">Price</p>
             <p
@@ -195,7 +195,7 @@ export default function ProductCard({ product, onQuickView, index = 0 }: Props) 
               isAdded
                 ? "bg-emerald-500 text-white"
                 : product.stockStatus === "out-of-stock"
-                ? "bg-white/5 text-slate-600 cursor-not-allowed"
+                ? "bg-slate-100 text-slate-400 cursor-not-allowed"
                 : "text-white hover:scale-105"
             }`}
             style={

@@ -33,12 +33,12 @@ function BlogCard({ post, index, onClick }: { post: BlogPost; index: number; onC
       whileHover={{ y: -5 }}
       onClick={onClick}
       className="glass-card rounded-3xl overflow-hidden cursor-pointer group transition-all duration-300"
-      style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
+      style={{ boxShadow: "0 0 0 1px rgba(148,163,184,0.15)" }}
       onMouseEnter={(e) => {
         e.currentTarget.style.boxShadow = `0 20px 50px -12px ${color}35, 0 0 0 1px ${color}25`;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = "0 0 0 1px rgba(255,255,255,0.06)";
+        e.currentTarget.style.boxShadow = "0 0 0 1px rgba(148,163,184,0.15)";
       }}
     >
       {/* Image area */}
@@ -91,13 +91,13 @@ function BlogCard({ post, index, onClick }: { post: BlogPost; index: number; onC
         </div>
 
         <h3
-          className="text-white font-bold text-lg leading-snug mb-3 group-hover:text-slate-100 transition-colors line-clamp-2"
+          className="text-slate-900 font-bold text-lg leading-snug mb-3 group-hover:text-slate-700 transition-colors line-clamp-2"
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
           {post.title}
         </h3>
 
-        <p className="text-slate-400 text-sm leading-relaxed line-clamp-3 mb-4">
+        <p className="text-slate-600 text-sm leading-relaxed line-clamp-3 mb-4">
           {post.excerpt}
         </p>
 
@@ -131,8 +131,8 @@ function BlogModal({ post, onClose }: { post: BlogPost; onClose: () => void }) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 30 }}
           transition={{ type: "spring", damping: 30, stiffness: 400 }}
-          className="relative w-full max-w-2xl max-h-[92vh] sm:max-h-[85vh] overflow-y-auto glass-dark rounded-t-3xl sm:rounded-3xl border border-white/10 z-10"
-          style={{ boxShadow: `0 40px 80px -20px ${color}40` }}
+          className="relative w-full max-w-2xl max-h-[92vh] sm:max-h-[85vh] overflow-y-auto glass-dark rounded-t-3xl sm:rounded-3xl border border-slate-200 z-10"
+          style={{ boxShadow: `0 40px 80px -20px ${color}30` }}
         >
           <div
             className="absolute top-0 left-0 right-0 h-0.5 rounded-t-3xl"
@@ -142,9 +142,9 @@ function BlogModal({ post, onClose }: { post: BlogPost; onClose: () => void }) {
           <button
             onClick={onClose}
             aria-label="Close article"
-            className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors z-10"
+            className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors z-10"
           >
-            <X className="w-4 h-4 text-white" />
+            <X className="w-4 h-4 text-slate-700" />
           </button>
 
           {/* Modal header */}
@@ -162,7 +162,7 @@ function BlogModal({ post, onClose }: { post: BlogPost; onClose: () => void }) {
               <span className="text-slate-500 text-xs">{formatDate(post.publishedAt)}</span>
             </div>
             <h2
-              className="text-xl sm:text-2xl md:text-3xl font-black text-white leading-tight"
+              className="text-xl sm:text-2xl md:text-3xl font-black text-slate-900 leading-tight"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               {post.title}
@@ -171,15 +171,15 @@ function BlogModal({ post, onClose }: { post: BlogPost; onClose: () => void }) {
 
           {/* Article content */}
           <div className="px-5 sm:px-8 pb-6 sm:pb-8">
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6 border-l-2 pl-4" style={{ borderColor: color }}>
+            <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6 border-l-2 pl-4" style={{ borderColor: color }}>
               {post.excerpt}
             </p>
 
             <div
-              className="prose-mobile text-slate-300 text-sm leading-relaxed space-y-4 prose-headings:text-white prose-headings:font-bold prose-headings:text-lg sm:prose-headings:text-xl prose-h2:mt-6 break-words"
+              className="prose-mobile text-slate-600 text-sm leading-relaxed space-y-4 prose-headings:text-slate-900 prose-headings:font-bold prose-headings:text-lg sm:prose-headings:text-xl prose-h2:mt-6 break-words"
               dangerouslySetInnerHTML={{ __html: post.content }}
               style={{
-                "--tw-prose-headings": "white",
+                "--tw-prose-headings": "#0f172a",
               } as React.CSSProperties}
             />
           </div>
@@ -212,15 +212,15 @@ export default function BlogPageClient() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#020617]">
+    <div className="min-h-screen bg-[#F4F2F8]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-28 pb-10 sm:pb-16 overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
             animate={{
               background: [
-                "radial-gradient(ellipse at 35% 50%, rgba(139,92,246,0.28) 0%, transparent 60%)",
-                "radial-gradient(ellipse at 65% 50%, rgba(16,185,129,0.22) 0%, transparent 60%)",
+                "radial-gradient(ellipse at 35% 50%, rgba(139,92,246,0.16) 0%, transparent 60%)",
+                "radial-gradient(ellipse at 65% 50%, rgba(16,185,129,0.12) 0%, transparent 60%)",
               ],
             }}
             transition={{ duration: 6, repeat: Infinity, repeatType: "reverse" }}
@@ -245,7 +245,7 @@ export default function BlogPageClient() {
             </div>
 
             <h1
-              className="text-3xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight mb-4 sm:mb-5"
+              className="text-3xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight mb-4 sm:mb-5"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Blog &amp;{" "}
@@ -261,7 +261,7 @@ export default function BlogPageClient() {
               </span>
             </h1>
 
-            <p className="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto px-2">
+            <p className="text-slate-600 text-base sm:text-xl max-w-2xl mx-auto px-2">
               Product guides, DIY tips, safety information, and buying advice from the Calico Canada team.
             </p>
           </motion.div>

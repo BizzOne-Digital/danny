@@ -3,9 +3,10 @@ export const seedProducts = [
     name: "Sodium Percarbonate 99.9% Granular Powder",
     slug: "sodium-percarbonate-99-granular-powder",
     category: "Concentrates",
-    shortDescription: "Oxygen bleach & chlorine-free bleach alternative. Multi-purpose cleaner, sanitizer, laundry booster & deodorizer.",
+    shortDescription:
+      "Oxygen bleach & chlorine-free bleach alternative. Multi-purpose cleaner, sanitizer, laundry booster & deodorizer.",
     description:
-      "Calico Canada's 99.9% Sodium Percarbonate is a powerful oxygen bleach and chlorine-free bleach alternative in granular powder form. Ideal for multi-purpose cleaning, sanitizing, laundry boosting, and deodorizing. Releases active oxygen when dissolved in water to break down stains, odours, and bacteria without harsh chemicals. Safe for coloured fabrics, septic systems, and the environment.",
+      "Calico's 99.9% Sodium Percarbonate is a powerful oxygen bleach and chlorine-free bleach alternative in granular powder form. Ideal for multi-purpose cleaning, sanitizing, laundry boosting, and deodorizing. Releases active oxygen when dissolved in water to break down stains, odours, and bacteria without harsh chemicals. Safe for coloured fabrics, septic systems, and the environment.",
     image: "/products/sodium-percarbonate.jpg",
     price: "$29.90",
     sizes: ["1.5 kg / 3.3 lb"],
@@ -23,7 +24,7 @@ export const seedProducts = [
     shortDescription:
       "All-purpose sanitizing agent & cleaner. 12% concentration — 4× stronger than standard drugstore grade.",
     description:
-      "Calico Canada's Hydrogen Peroxide 12% Solution is a concentrated, all-purpose sanitizing agent and cleaner available in a convenient 4-litre (1 gallon) jug. At 12% concentration, it is 4× stronger than standard 3% drugstore hydrogen peroxide, making it ideal for deep cleaning, disinfecting surfaces, sanitizing equipment, and general household or commercial use. Breaks down into water and oxygen — no harsh residues.",
+      "Calico's Hydrogen Peroxide 12% Solution is a concentrated, all-purpose sanitizing agent and cleaner available in a convenient 4-litre (1 gallon) jug. At 12% concentration, it is 4× stronger than standard 3% drugstore hydrogen peroxide, making it ideal for deep cleaning, disinfecting surfaces, sanitizing equipment, and general household or commercial use. Breaks down into water and oxygen — no harsh residues.",
     image: "/products/hydrogen-peroxide-12.jpg",
     price: "$49.90",
     sizes: ["4 Litre / 1 Gallon"],
@@ -41,9 +42,9 @@ export const seedProducts = [
     shortDescription:
       "Food-grade caustic soda / lye. FCC & NSF compliant. Perfect for soap making & drain cleaning.",
     description:
-      "Calico Canada's 99.9% Sodium Hydroxide (Caustic Soda / Lye) in micropearl form is food-grade, FCC and NSF compliant. The micropearl format dissolves quickly and uniformly, making it ideal for cold-process soap making, drain cleaning, pH adjustment, and industrial cleaning applications. Highest purity grade available for professional and home crafters.",
+      "Calico's 99.9% Sodium Hydroxide (Caustic Soda / Lye) in micropearl form is food-grade, FCC and NSF compliant. The micropearl format dissolves quickly and uniformly, making it ideal for cold-process soap making, drain cleaning, pH adjustment, and industrial cleaning applications. Highest purity grade available for professional and home crafters.",
     image: "/products/sodium-hydroxide.jpg",
-    price: "$89.90",
+    price: "$79.90",
     sizes: ["5 kg / 11 lb"],
     colorCode: "green",
     stockStatus: "in-stock",
@@ -59,7 +60,7 @@ export const seedProducts = [
     shortDescription:
       "All-purpose cleaner & sanitizing agent. Double the strength of standard 3% grade.",
     description:
-      "Calico Canada's Hydrogen Peroxide 6% Solution is a versatile all-purpose cleaner and sanitizing agent in a 4-litre (1 gallon) jug. At 6% concentration, it is 2× stronger than standard drugstore hydrogen peroxide, ideal for surface disinfection, household cleaning, whitening, and light sanitization tasks. Eco-friendly formula that breaks down into water and oxygen with no toxic residues.",
+      "Calico's Hydrogen Peroxide 6% Solution is a versatile all-purpose cleaner and sanitizing agent in a 4-litre (1 gallon) jug. At 6% concentration, it is 2× stronger than standard drugstore hydrogen peroxide, ideal for surface disinfection, household cleaning, whitening, and light sanitization tasks. Eco-friendly formula that breaks down into water and oxygen with no toxic residues.",
     image: "/products/hydrogen-peroxide-6.jpg",
     price: "$39.90",
     sizes: ["4 Litre / 1 Gallon"],
@@ -69,24 +70,6 @@ export const seedProducts = [
     usageNote:
       "Use directly on surfaces or dilute further for sensitive applications. Spray, apply, wait 2–3 minutes, and wipe. Avoid prolonged skin contact.",
     bulkAvailable: false,
-  },
-  {
-    name: "Isopropyl Alcohol 70% Solution",
-    slug: "isopropyl-alcohol-70-solution",
-    category: "Surface Solutions",
-    shortDescription:
-      "Rubbing alcohol for general-purpose cleaning, disinfecting, and sanitizing surfaces.",
-    description:
-      "Calico Canada's Isopropyl Alcohol 70% is the optimal concentration for disinfection and sanitization, proven effective against bacteria and viruses on hard surfaces. Fast-drying, streak-free formula suitable for cleaning electronics, medical equipment, countertops, and general household surfaces. Available in bulk for high-frequency use in homes, offices, and commercial environments.",
-    image: "/products/isopropyl-alcohol-70.jpg",
-    price: "$35.48",
-    sizes: ["4 Litre / 1 Gallon"],
-    colorCode: "blue",
-    stockStatus: "in-stock",
-    isFeatured: true,
-    usageNote:
-      "Apply to surface with cloth or spray. Allow to air dry. Do not use near open flame. Keep away from children.",
-    bulkAvailable: true,
   },
 ];
 
@@ -112,10 +95,10 @@ export const seedBlogPosts = [
     slug: "colour-coded-cleaning-products-safety-organization",
     category: "Safety & Organization",
     excerpt:
-      "Learn how the Calico Canada colour-coding system makes chemical identification safer, faster, and more organized.",
-    content: `<p>Colour coding is one of the most effective organizational tools in professional cleaning environments — and it's the foundation of the Calico Canada product system.</p>
+      "Learn how the Calico colour-coding system makes chemical identification safer, faster, and more organized.",
+    content: `<p>Colour coding is one of the most effective organizational tools in professional cleaning environments — and it's the foundation of the Calico product system.</p>
     <h2>The Calico Colour System</h2>
-    <p>Every Calico Canada product belongs to a colour category: Purple for concentrates, Blue for alcohol and surface solutions, Green for household essentials, and Yellow for bulk and distribution products.</p>
+    <p>Every Calico product belongs to a colour category: Purple for concentrates, Blue for alcohol and surface solutions, Green for household essentials, and Yellow for bulk and distribution products.</p>
     <h2>Safety First</h2>
     <p>Mixing incompatible chemicals is a real hazard. Colour-coded organization dramatically reduces the chance of accidental misidentification, especially in fast-paced commercial environments.</p>
     <h2>Efficiency Gains</h2>
@@ -134,8 +117,8 @@ export const seedBlogPosts = [
     <p>Before committing to a bulk order, assess your usage rate, storage capacity, and dilution needs. High-dilution concentrates are almost always more economical than ready-to-use products.</p>
     <h2>What to Buy in Bulk</h2>
     <p>All-purpose cleaners, degreasers, disinfectants, and floor cleaners are ideal for bulk purchasing. These are high-frequency products with stable shelf life.</p>
-    <h2>Working with Calico Canada</h2>
-    <p>Calico Canada specializes in wholesale and distribution of cleaning chemicals across Canada. Contact our team to discuss volume pricing and product matching for your specific needs.</p>`,
+    <h2>Working with Calico</h2>
+    <p>Calico specializes in wholesale and distribution of cleaning chemicals across Canada. Contact our team to discuss volume pricing and product matching for your specific needs.</p>`,
     image: "",
     publishedAt: new Date("2025-01-10"),
   },
@@ -147,7 +130,7 @@ export const seedBlogPosts = [
       "Everything you need to know to start making your own cleaning detergents at home using quality base chemicals.",
     content: `<p>DIY detergent crafting has grown in popularity. Whether you're trying to save money, control ingredients, or create custom cleaning products, starting with quality base chemicals is essential.</p>
     <h2>Essential Base Ingredients</h2>
-    <p>Most liquid detergents start with a surfactant base — this is the cleaning agent that breaks down grease and dirt. Calico Canada supplies clean, versatile bases for experimentation.</p>
+    <p>Most liquid detergents start with a surfactant base — this is the cleaning agent that breaks down grease and dirt. Calico supplies clean, versatile bases for experimentation.</p>
     <h2>Simple Starter Recipe</h2>
     <p>Combine 100ml of detergent base with 900ml of warm water. Add 10–20 drops of your favourite fragrance oil and a pinch of salt to thicken. Bottle and label. That's a basic all-purpose liquid cleaner.</p>
     <h2>Safety Considerations</h2>

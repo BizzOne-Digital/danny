@@ -31,7 +31,7 @@ export default function FeaturedProducts() {
   }, []);
 
   return (
-    <section className="relative py-14 md:py-24 bg-[#020617] overflow-hidden">
+    <section className="relative py-14 md:py-24 bg-[#F4F2F8] overflow-hidden">
       {/* Subtle background */}
       <div className="absolute inset-0 pointer-events-none">
         <div
@@ -62,7 +62,7 @@ export default function FeaturedProducts() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Top Calico Products
@@ -75,7 +75,7 @@ export default function FeaturedProducts() {
           >
             <Link
               href="/shop"
-              className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors group font-medium"
+              className="inline-flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors group font-medium"
             >
               View all products
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

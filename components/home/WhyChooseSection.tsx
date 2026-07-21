@@ -44,14 +44,14 @@ const reasons = [
 
 export default function WhyChooseSection() {
   return (
-    <section className="relative py-14 md:py-24 overflow-hidden bg-[#020617]">
+    <section className="relative py-14 md:py-24 overflow-hidden bg-[#F4F2F8]">
       {/* Background */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.4]"
         style={{
           backgroundImage: `
-            linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)
+            linear-gradient(rgba(139,92,246,0.12) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(139,92,246,0.12) 1px, transparent 1px)
           `,
           backgroundSize: "80px 80px",
         }}
@@ -74,7 +74,7 @@ export default function WhyChooseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-3 sm:mb-4"
+            className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-3 sm:mb-4"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             Built Different.{" "}
@@ -94,7 +94,7 @@ export default function WhyChooseSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-400 text-base sm:text-lg max-w-xl mx-auto px-2"
+            className="text-slate-600 text-base sm:text-lg max-w-xl mx-auto px-2"
           >
             Six reasons why buyers across Canada choose Calico for their cleaning chemical needs.
           </motion.p>
@@ -113,12 +113,12 @@ export default function WhyChooseSection() {
                 transition={{ duration: 0.5, delay: i * 0.09 }}
                 whileHover={{ y: -5 }}
                 className="glass-card rounded-3xl p-5 sm:p-7 group cursor-default transition-all duration-300"
-                style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
+                style={{ boxShadow: "0 0 0 1px rgba(148,163,184,0.15)" }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = `0 20px 50px -12px ${reason.color}35, 0 0 0 1px ${reason.color}25`;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = "0 0 0 1px rgba(255,255,255,0.06)";
+                  e.currentTarget.style.boxShadow = "0 0 0 1px rgba(148,163,184,0.15)";
                 }}
               >
                 <div
@@ -129,12 +129,12 @@ export default function WhyChooseSection() {
                 </div>
 
                 <h3
-                  className="text-white font-bold text-lg mb-3 leading-snug"
+                  className="text-slate-900 font-bold text-lg mb-3 leading-snug"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {reason.title}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{reason.desc}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{reason.desc}</p>
               </motion.div>
             );
           })}

@@ -15,11 +15,11 @@ export default function WholesaleSection() {
   return (
     <section className="relative py-14 md:py-24 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-950/30 via-[#0a0f1e] to-[#0a0f1e]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-amber-50 via-[#F8F7FC] to-[#EEF2FF]" />
       <div
-        className="absolute inset-0 opacity-15"
+        className="absolute inset-0 opacity-40"
         style={{
-          background: "radial-gradient(ellipse at 80% 50%, #F59E0B30 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at 80% 50%, #F59E0B25 0%, transparent 60%)",
         }}
       />
 
@@ -42,7 +42,7 @@ export default function WholesaleSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4 sm:mb-5"
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4 sm:mb-5"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Buy Big.{" "}
@@ -63,7 +63,7 @@ export default function WholesaleSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-slate-300 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8"
+              className="text-slate-600 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8"
             >
               Calico Canada supports bulk buyers and distributors with competitive wholesale
               pricing, large-format containers, and Canada-wide shipping. Whether you need
@@ -91,7 +91,7 @@ export default function WholesaleSection() {
                     <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 bg-amber-500/15">
                       <Icon className="w-4 h-4 text-amber-400" />
                     </div>
-                    <p className="text-white font-semibold text-sm mb-1">{feat.label}</p>
+                    <p className="text-slate-900 font-semibold text-sm mb-1">{feat.label}</p>
                     <p className="text-slate-500 text-xs">{feat.desc}</p>
                   </motion.div>
                 );
@@ -113,7 +113,7 @@ export default function WholesaleSection() {
                 Request Wholesale Pricing
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/services" className="btn-secondary rounded-xl text-sm py-3 sm:py-3.5 w-full sm:w-auto justify-center" style={{ color: "white" }}>
+              <Link href="/services" className="btn-secondary rounded-xl text-sm py-3 sm:py-3.5 w-full sm:w-auto justify-center">
                 View Services
               </Link>            </motion.div>
           </div>
@@ -130,8 +130,8 @@ export default function WholesaleSection() {
               <div
                 className="h-64 sm:h-80 lg:h-[460px] rounded-3xl flex flex-col items-center justify-center relative"
                 style={{
-                  background: "linear-gradient(135deg, #1a1208, #0a0f1e)",
-                  border: "1px solid rgba(245,158,11,0.2)",
+                  background: "linear-gradient(135deg, #FFFBEB, #EEF2FF)",
+                  border: "1px solid rgba(245,158,11,0.25)",
                 }}
               >
                 {/* Yellow glow */}

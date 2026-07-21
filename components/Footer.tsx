@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { FlaskConical, MapPin, Mail, Phone, Clock, ArrowRight, Droplets, Palette, Beaker, ShieldCheck, Leaf, Flag, TruckIcon, CheckCircle } from "lucide-react";
 
 const quickLinks = [
@@ -22,10 +23,10 @@ const shopCategories = [
 ];
 
 const trustItems = [
-  { icon: ShieldCheck, label: "Trusted by Businesses Across Canada", sub: "Quality you can trust",      color: "#8B5CF6" },
-  { icon: Leaf,        label: "Eco-Conscious Formulations",          sub: "Safer for you & the planet", color: "#10B981" },
-  { icon: Flag,        label: "Proudly Canadian Made & Operated",    sub: "Supporting local",            color: "#3B82F6" },
-  { icon: TruckIcon,   label: "Fast & Reliable Nationwide Delivery", sub: "On time, every time",        color: "#F59E0B" },
+  { icon: ShieldCheck, label: "Trusted by Businesses Across Canada", sub: "Quality you can trust",      color: "#A78BFA" },
+  { icon: Leaf,        label: "Eco-Conscious Formulations",          sub: "Safer for you & the planet", color: "#34D399" },
+  { icon: Flag,        label: "Proudly Canadian Made & Operated",    sub: "Supporting local",            color: "#60A5FA" },
+  { icon: TruckIcon,   label: "Fast & Reliable Nationwide Delivery", sub: "On time, every time",        color: "#FBBF24" },
 ];
 
 const featureItems = [
@@ -49,12 +50,12 @@ export default function Footer() {
   return (
     <footer
       className="relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #06080f 0%, #020617 100%)" }}
+      style={{ background: "linear-gradient(180deg, #5B21B6 0%, #4C1D95 55%, #3B0764 100%)" }}
     >
       {/* Subtle top glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px"
-        style={{ background: "linear-gradient(90deg, transparent, rgba(139,92,246,0.4), transparent)" }}
+        style={{ background: "linear-gradient(90deg, transparent, rgba(196,181,253,0.5), transparent)" }}
       />
 
       {/* ── Main footer grid ── */}
@@ -64,30 +65,17 @@ export default function Footer() {
           {/* Col 1 — Brand */}
           <div>
             {/* Logo */}
-            <div className="flex items-center gap-3 mb-4">
-              <div
-                className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0"
-                style={{ background: "linear-gradient(135deg, #8B5CF6, #3B82F6, #10B981)" }}
-              >
-                <FlaskConical className="w-6 h-6 text-white" />
-              </div>
-              <div style={{ fontFamily: "var(--font-space-grotesk)" }}>
-                <span className="text-xl font-black text-white">Calico </span>
-                <span
-                  className="text-xl font-black"
-                  style={{
-                    background: "linear-gradient(135deg, #a78bfa, #60a5fa)",
-                    backgroundClip: "text",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                  }}
-                >
-                  Canada
-                </span>
-              </div>
+            <div className="mb-4">
+              <Image
+                src="/logo-banner.png"
+                alt="Calico Canada"
+                width={200}
+                height={56}
+                className="h-12 w-auto object-contain"
+              />
             </div>
 
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
+            <p className="text-violet-200 text-sm leading-relaxed mb-6">
               Pure &amp; concentrated cleaning chemicals for homes, makers, bulk buyers, and distributors across Canada.
             </p>
 
@@ -101,8 +89,8 @@ export default function Footer() {
               ].map((item, i) => {
                 const Icon = item.icon;
                 const inner = (
-                  <div className="flex items-start gap-3 text-slate-400 hover:text-slate-200 transition-colors text-sm">
-                    <Icon className="w-4 h-4 text-slate-600 mt-0.5 flex-shrink-0" />
+                  <div className="flex items-start gap-3 text-violet-200 hover:text-white transition-colors text-sm">
+                    <Icon className="w-4 h-4 text-violet-300 mt-0.5 flex-shrink-0" />
                     <span className="whitespace-pre-line">{item.text}</span>
                   </div>
                 );
@@ -123,16 +111,15 @@ export default function Footer() {
             >
               Quick Links
             </h4>
-            <div className="w-8 h-0.5 rounded-full mb-5" style={{ background: "linear-gradient(90deg, #8B5CF6, transparent)" }} />
+            <div className="w-8 h-0.5 rounded-full mb-5" style={{ background: "linear-gradient(90deg, #C4B5FD, transparent)" }} />
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="flex items-center gap-2 text-slate-400 hover:text-white text-sm transition-colors group"
-                    style={{ color: "inherit" }}
+                    className="flex items-center gap-2 text-violet-200 hover:text-white text-sm transition-colors group"
                   >
-                    <ArrowRight className="w-3 h-3 text-slate-600 group-hover:text-purple-400 transition-colors" />
+                    <ArrowRight className="w-3 h-3 text-violet-400 group-hover:text-violet-200 transition-colors" />
                     {link.label}
                   </Link>
                 </li>
@@ -148,7 +135,7 @@ export default function Footer() {
             >
               Shop Categories
             </h4>
-            <div className="w-8 h-0.5 rounded-full mb-5" style={{ background: "linear-gradient(90deg, #8B5CF6, transparent)" }} />
+            <div className="w-8 h-0.5 rounded-full mb-5" style={{ background: "linear-gradient(90deg, #C4B5FD, transparent)" }} />
             <ul className="space-y-3">
               {shopCategories.map((cat) => {
                 const Icon = cat.icon;
@@ -156,14 +143,13 @@ export default function Footer() {
                   <li key={cat.label}>
                     <Link
                       href={cat.href}
-                      className="flex items-center gap-3 text-slate-400 hover:text-white text-sm transition-colors group"
-                      style={{ color: "inherit" }}
+                      className="flex items-center gap-3 text-violet-200 hover:text-white text-sm transition-colors group"
                     >
                       <div
                         className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0 transition-colors"
-                        style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.2)" }}
+                        style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.15)" }}
                       >
-                        <Icon className="w-3.5 h-3.5 text-purple-400" />
+                        <Icon className="w-3.5 h-3.5 text-violet-200" />
                       </div>
                       {cat.label}
                     </Link>
@@ -181,14 +167,14 @@ export default function Footer() {
             >
               Newsletter
             </h4>
-            <div className="w-8 h-0.5 rounded-full mb-5" style={{ background: "linear-gradient(90deg, #8B5CF6, transparent)" }} />
+            <div className="w-8 h-0.5 rounded-full mb-5" style={{ background: "linear-gradient(90deg, #C4B5FD, transparent)" }} />
 
-            <p className="text-slate-400 text-sm leading-relaxed mb-4">
+            <p className="text-violet-200 text-sm leading-relaxed mb-4">
               Get the latest updates, new products, and exclusive offers.
             </p>
 
             {subscribed ? (
-              <div className="flex items-center gap-2 text-emerald-400 text-sm font-medium mb-5">
+              <div className="flex items-center gap-2 text-emerald-300 text-sm font-medium mb-5">
                 <CheckCircle className="w-4 h-4" />
                 You&apos;re subscribed!
               </div>
@@ -200,10 +186,10 @@ export default function Footer() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
                   required
-                  className="w-full px-4 py-2.5 rounded-xl text-sm text-white placeholder-slate-500 transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl text-sm text-white placeholder-violet-300/70 transition-all"
                   style={{
-                    background: "rgba(255,255,255,0.05)",
-                    border: "1px solid rgba(255,255,255,0.1)",
+                    background: "rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.2)",
                     outline: "none",
                   }}
                 />
@@ -226,13 +212,13 @@ export default function Footer() {
                   <li key={item.label} className="flex items-center gap-3">
                     <div
                       className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0"
-                      style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.2)" }}
+                      style={{ background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.15)" }}
                     >
-                      <Icon className="w-4 h-4 text-purple-400" />
+                      <Icon className="w-4 h-4 text-violet-200" />
                     </div>
                     <div>
                       <p className="text-white text-xs font-semibold leading-none">{item.label}</p>
-                      <p className="text-slate-500 text-[11px] leading-none mt-0.5">{item.sub}</p>
+                      <p className="text-violet-300 text-[11px] leading-none mt-0.5">{item.sub}</p>
                     </div>
                   </li>
                 );
@@ -245,7 +231,7 @@ export default function Footer() {
       {/* ── Trust banner ── */}
       <div
         className="border-t border-b"
-        style={{ borderColor: "rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)" }}
+        style={{ borderColor: "rgba(255,255,255,0.12)", background: "rgba(255,255,255,0.06)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -255,13 +241,13 @@ export default function Footer() {
                 <div key={item.label} className="flex items-center gap-3">
                   <div
                     className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                    style={{ background: `${item.color}18`, border: `1px solid ${item.color}30` }}
+                    style={{ background: `${item.color}22`, border: `1px solid ${item.color}40` }}
                   >
                     <Icon className="w-5 h-5" style={{ color: item.color }} />
                   </div>
                   <div>
                     <p className="text-white text-xs sm:text-sm font-bold leading-snug">{item.label}</p>
-                    <p className="text-slate-500 text-xs leading-snug mt-0.5">{item.sub}</p>
+                    <p className="text-violet-300 text-xs leading-snug mt-0.5">{item.sub}</p>
                   </div>
                 </div>
               );
@@ -273,35 +259,15 @@ export default function Footer() {
       {/* ── Bottom bar ── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5">
         <div className="flex flex-col items-center justify-center gap-4 text-center">
-          <p className="text-slate-600 text-xs order-2 sm:order-1">
+          <p className="text-violet-300 text-xs order-2 sm:order-1">
             © {new Date().getFullYear()} Calico Canada Inc. All rights reserved.
           </p>
 
           <div className="flex items-center gap-2 order-1 sm:order-2">
-            <FlaskConical className="w-3.5 h-3.5 text-purple-500" />
-            <span
-              className="text-sm font-semibold"
-              style={{
-                background: "linear-gradient(135deg, #8B5CF6, #3B82F6, #10B981)",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
+            <FlaskConical className="w-3.5 h-3.5 text-violet-300" />
+            <span className="text-sm font-semibold text-violet-100">
               Clean. Safe. Reliable.
             </span>
-          </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-2 order-3">
-            {["VISA", "MC", "AMEX", "⬛ Pay", "G Pay"].map((label) => (
-              <div
-                key={label}
-                className="px-2 py-1 rounded-md text-[10px] font-bold text-slate-400 border"
-                style={{ borderColor: "rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.04)" }}
-              >
-                {label}
-              </div>
-            ))}
           </div>
         </div>
       </div>

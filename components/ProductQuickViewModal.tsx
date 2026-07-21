@@ -25,9 +25,9 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
   const colors = COLOR_MAP[product.colorCode] || COLOR_MAP.purple;
 
   const stockConfig = {
-    "in-stock": { label: "In Stock", icon: CheckCircle, color: "text-emerald-400" },
-    "low-stock": { label: "Low Stock", icon: TrendingDown, color: "text-amber-400" },
-    "out-of-stock": { label: "Out of Stock", icon: Package2, color: "text-red-400" },
+    "in-stock": { label: "In Stock", icon: CheckCircle, color: "text-emerald-500" },
+    "low-stock": { label: "Low Stock", icon: TrendingDown, color: "text-amber-500" },
+    "out-of-stock": { label: "Out of Stock", icon: Package2, color: "text-red-500" },
   };
   const stockInfo = stockConfig[product.stockStatus] || stockConfig["in-stock"];
   const StockIcon = stockInfo.icon;
@@ -58,7 +58,7 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="absolute inset-0 bg-black/70 backdrop-blur-md"
+            className="absolute inset-0 bg-slate-900/40 backdrop-blur-md"
             onClick={onClose}
           />
 
@@ -68,8 +68,8 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 30 }}
             transition={{ type: "spring", damping: 30, stiffness: 400 }}
-            className="relative w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto glass-dark rounded-t-3xl sm:rounded-3xl border border-white/10 z-10"
-            style={{ boxShadow: `0 40px 80px -20px ${colors.hex}40, 0 0 0 1px ${colors.hex}20` }}
+            className="relative w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-y-auto glass-dark rounded-t-3xl sm:rounded-3xl border border-slate-200 z-10"
+            style={{ boxShadow: `0 40px 80px -20px ${colors.hex}30, 0 0 0 1px ${colors.hex}15` }}
           >
             {/* Color accent top bar */}
             <div
@@ -81,9 +81,9 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
             <button
               onClick={onClose}
               aria-label="Close modal"
-              className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors z-10"
+              className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center hover:bg-slate-200 transition-colors z-10"
             >
-              <X className="w-4 h-4 text-white" />
+              <X className="w-4 h-4 text-slate-700" />
             </button>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
@@ -92,7 +92,7 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
                 className="relative flex items-center justify-center p-6 sm:p-10 rounded-t-3xl md:rounded-l-3xl md:rounded-tr-none min-h-[180px] sm:min-h-[240px]"
                 style={{
                   background: `linear-gradient(135deg, ${colors.hex}15, ${colors.hex}05)`,
-                  borderBottom: "1px solid rgba(255,255,255,0.06)",
+                  borderBottom: "1px solid rgba(148,163,184,0.2)",
                 }}
               >
                 <div
@@ -150,21 +150,21 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
 
                 {/* Product name */}
                 <h2
-                  className="text-xl sm:text-2xl font-black text-white mb-3 leading-tight line-clamp-3"
+                  className="text-xl sm:text-2xl font-black text-slate-900 mb-3 leading-tight line-clamp-3"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {product.name}
                 </h2>
 
                 {/* Description */}
-                <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                <p className="text-slate-600 text-sm leading-relaxed mb-5">
                   {product.description}
                 </p>
 
                 {/* Size selector */}
                 {product.sizes?.length > 0 && (
                   <div className="mb-5">
-                    <p className="text-xs font-medium text-slate-400 mb-2 uppercase tracking-wide">
+                    <p className="text-xs font-medium text-slate-500 mb-2 uppercase tracking-wide">
                       Available Sizes
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -175,7 +175,7 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
                           className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all border ${
                             selectedSize === size
                               ? "text-white border-transparent"
-                              : "text-slate-400 border-white/10 bg-white/5 hover:border-white/20"
+                              : "text-slate-600 border-slate-200 bg-slate-50 hover:border-slate-300"
                           }`}
                           style={
                             selectedSize === size
@@ -192,9 +192,9 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
 
                 {/* Usage note */}
                 {product.usageNote && (
-                  <div className="flex gap-2 p-3 rounded-xl bg-white/4 border border-white/6 mb-5">
+                  <div className="flex gap-2 p-3 rounded-xl bg-slate-50 border border-slate-200 mb-5">
                     <Beaker className="w-4 h-4 flex-shrink-0 mt-0.5" style={{ color: colors.hex }} />
-                    <p className="text-slate-400 text-xs leading-relaxed">{product.usageNote}</p>
+                    <p className="text-slate-600 text-xs leading-relaxed">{product.usageNote}</p>
                   </div>
                 )}
 
@@ -223,19 +223,19 @@ export default function ProductQuickViewModal({ product, onClose }: Props) {
 
                 {/* Quantity + Add to cart */}
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <div className="flex items-center justify-center gap-2 bg-white/5 rounded-xl border border-white/10 px-3 py-2 self-start">
+                  <div className="flex items-center justify-center gap-2 bg-slate-50 rounded-xl border border-slate-200 px-3 py-2 self-start">
                     <button
                       onClick={() => setQuantity(Math.max(1, quantity - 1))}
                       aria-label="Decrease quantity"
-                      className="text-slate-400 hover:text-white transition-colors w-5 h-5 flex items-center justify-center"
+                      className="text-slate-500 hover:text-slate-900 transition-colors w-5 h-5 flex items-center justify-center"
                     >
                       −
                     </button>
-                    <span className="text-white font-bold w-6 text-center">{quantity}</span>
+                    <span className="text-slate-900 font-bold w-6 text-center">{quantity}</span>
                     <button
                       onClick={() => setQuantity(quantity + 1)}
                       aria-label="Increase quantity"
-                      className="text-slate-400 hover:text-white transition-colors w-5 h-5 flex items-center justify-center"
+                      className="text-slate-500 hover:text-slate-900 transition-colors w-5 h-5 flex items-center justify-center"
                     >
                       +
                     </button>

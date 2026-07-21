@@ -36,30 +36,30 @@ export default function HeroSection() {
             backgroundPosition: "center right",
           }}
         />
-        {/* Mobile: strong dark overlay so text is readable */}
+        {/* Mobile: soft dark overlay so white text stays readable */}
         <div
           className="absolute inset-0 sm:hidden"
-          style={{ background: "rgba(2,6,23,0.82)" }}
+          style={{ background: "rgba(15,23,42,0.72)" }}
         />
-        {/* Desktop: directional gradient — dark left, transparent right */}
+        {/* Desktop: softer directional gradient — dark left, transparent right */}
         <div
           className="absolute inset-0 hidden sm:block"
           style={{
             background: `linear-gradient(to right,
-              rgba(2,6,23,0.97) 0%,
-              rgba(2,6,23,0.90) 30%,
-              rgba(2,6,23,0.50) 55%,
-              rgba(2,6,23,0.08) 75%,
+              rgba(15,23,42,0.88) 0%,
+              rgba(15,23,42,0.78) 28%,
+              rgba(15,23,42,0.40) 55%,
+              rgba(244,242,248,0.15) 78%,
               transparent 100%
             )`,
           }}
         />
-        {/* Top fade */}
+        {/* Top fade into light site */}
         <div className="absolute inset-x-0 top-0 h-32"
-          style={{ background: "linear-gradient(to bottom, rgba(2,6,23,0.95), transparent)" }} />
-        {/* Bottom fade */}
+          style={{ background: "linear-gradient(to bottom, rgba(244,242,248,0.55), transparent)" }} />
+        {/* Bottom fade into light page bg */}
         <div className="absolute inset-x-0 bottom-0 h-40"
-          style={{ background: "linear-gradient(to top, rgba(2,6,23,1), transparent)" }} />
+          style={{ background: "linear-gradient(to top, #F4F2F8, transparent)" }} />
       </div>
 
       {/* ── Main content ── */}
@@ -75,31 +75,34 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
               className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full text-xs font-semibold mb-4 sm:mb-6 border"
-              style={{ background: "rgba(139,92,246,0.15)", borderColor: "rgba(139,92,246,0.4)", color: "#C4B5FD" }}
+              style={{ background: "rgba(139,92,246,0.25)", borderColor: "rgba(196,181,253,0.5)", color: "#E9D5FF" }}
             >
               <Sparkles className="w-3 h-3" />
               Canadian Cleaning Chemicals
             </motion.div>
 
-            {/* Headline */}
+            {/* Headline — white OK on hero overlay */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.25 }}
               className="font-black leading-[1.0] tracking-tighter mb-4"
-              style={{ fontFamily: "var(--font-space-grotesk)", fontSize: "clamp(2.8rem, 10vw, 6.5rem)" }}
+              style={{
+                fontFamily: "var(--font-space-grotesk)",
+                fontSize: "clamp(2.8rem, 10vw, 6.5rem)",
+                background: "linear-gradient(135deg, #c4b5fd 0%, #60a5fa 45%, #34d399 100%)",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
             >
-              <span className="text-white block">Calico</span>
-              <span className="block" style={{
-                background: "linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%)",
-                backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-              }}>Canada</span>
+              Calico
             </motion.h1>
 
             {/* Subtext */}
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-slate-300 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8"
+              className="text-slate-200 text-sm sm:text-lg leading-relaxed mb-6 sm:mb-8"
             >
               Pure &amp; concentrated cleaning chemicals for{" "}
               <strong className="text-white font-semibold">homes, makers, bulk buyers,</strong> and{" "}
@@ -123,8 +126,8 @@ export default function HeroSection() {
               </Link>
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:bg-white/10"
-                style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)", color: "white", WebkitTextFillColor: "white" }}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-sm transition-all hover:bg-white/15"
+                style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.28)", color: "white", WebkitTextFillColor: "white" }}
               >
                 <Sparkles className="w-4 h-4" />
                 Explore Services
@@ -141,10 +144,10 @@ export default function HeroSection() {
                 const Icon = badge.icon;
                 return (
                   <div key={badge.label} className="flex items-center gap-2">
-                    <Icon className="w-4 h-4 text-slate-500 flex-shrink-0" />
+                    <Icon className="w-4 h-4 text-slate-300 flex-shrink-0" />
                     <div>
                       <p className="text-white text-xs font-semibold leading-none">{badge.label}</p>
-                      <p className="text-slate-500 text-[11px] leading-none mt-0.5">{badge.sub}</p>
+                      <p className="text-slate-300 text-[11px] leading-none mt-0.5">{badge.sub}</p>
                     </div>
                   </div>
                 );
@@ -154,12 +157,12 @@ export default function HeroSection() {
         </div>
       </motion.div>
 
-      {/* ── Bottom feature bar ── */}
+      {/* ── Bottom feature bar — soft light glass ── */}
       <motion.div
         initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.85 }}
         className="relative z-10 w-full border-t"
-        style={{ borderColor: "rgba(255,255,255,0.07)", background: "rgba(2,6,23,0.8)", backdropFilter: "blur(14px)" }}
+        style={{ borderColor: "rgba(148,163,184,0.25)", background: "rgba(255,255,255,0.85)", backdropFilter: "blur(14px)" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
@@ -169,12 +172,12 @@ export default function HeroSection() {
                 <div key={badge.label} className="flex items-center gap-2">
                   <div
                     className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-                    style={{ background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.28)" }}
+                    style={{ background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.25)" }}
                   >
-                    <Icon className="w-3.5 h-3.5 text-purple-400" />
+                    <Icon className="w-3.5 h-3.5 text-purple-500" />
                   </div>
                   <div>
-                    <p className="text-white text-[10px] sm:text-xs font-semibold leading-tight">{badge.label}</p>
+                    <p className="text-slate-900 text-[10px] sm:text-xs font-semibold leading-tight">{badge.label}</p>
                     <p className="text-slate-500 text-[9px] sm:text-[11px] leading-none mt-0.5 hidden sm:block">{badge.sub}</p>
                   </div>
                 </div>

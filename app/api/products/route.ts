@@ -4,7 +4,7 @@ import Product from "@/models/Product";
 import { seedProducts } from "@/lib/seedData";
 
 // Version bump this string whenever you change seed data — forces a re-seed
-const SEED_VERSION = "v4-prices-no-cad-2025";
+const SEED_VERSION = "v5-amazon-4-products-2025";
 
 export async function GET(request: NextRequest) {
   try {
@@ -15,14 +15,15 @@ export async function GET(request: NextRequest) {
     const featured = searchParams.get("featured");
     const search = searchParams.get("search");
 
-    // Check if current seed version is loaded
-    const correctProduct = await Product.findOne({
-      slug: "sodium-percarbonate-99-granular-powder",
-      price: "$29.90",
+    // Re-seed when product set doesn't match Amazon store (4 products, no isopropyl, hydroxide $79.90)
+    const productCount = await Product.countDocuments();
+    const hasIsopropyl = await Product.findOne({ slug: "isopropyl-alcohol-70-solution" });
+    const hydroxideOk = await Product.findOne({
+      slug: "sodium-hydroxide-99-micropearls-5kg",
+      price: "$79.90",
     });
 
-    if (!correctProduct) {
-      // Wipe all old products and re-seed with correct data
+    if (productCount !== 4 || hasIsopropyl || !hydroxideOk) {
       await Product.deleteMany({});
       await Product.insertMany(seedProducts);
     }

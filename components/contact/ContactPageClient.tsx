@@ -58,10 +58,10 @@ export default function ContactPageClient() {
   };
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3.5 text-white text-sm placeholder-slate-500 focus:border-purple-500/50 focus:bg-white/8 transition-all duration-200";
+    "w-full bg-white border border-slate-200 rounded-2xl px-5 py-3.5 text-slate-900 text-sm placeholder-slate-400 focus:border-purple-400 focus:bg-white transition-all duration-200";
 
   return (
-    <div className="min-h-screen bg-[#020617]">
+    <div className="min-h-screen bg-[#F4F2F8]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-28 pb-10 sm:pb-16 overflow-hidden">
         <div className="absolute inset-0">
@@ -94,7 +94,7 @@ export default function ContactPageClient() {
             </div>
 
             <h1
-              className="text-3xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight mb-4 sm:mb-5"
+              className="text-3xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight mb-4 sm:mb-5"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Contact{" "}
@@ -110,7 +110,7 @@ export default function ContactPageClient() {
               </span>
             </h1>
 
-            <p className="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto px-2">
+            <p className="text-slate-600 text-base sm:text-xl max-w-2xl mx-auto px-2">
               Questions about products, wholesale pricing, or custom orders? Danny and the Calico Canada team are here to help.
             </p>
           </motion.div>
@@ -154,12 +154,12 @@ export default function ContactPageClient() {
                     href={contact.href}
                     whileHover={{ x: 4 }}
                     className="flex items-center gap-4 sm:gap-5 glass-card rounded-3xl p-4 sm:p-6 group transition-all duration-200"
-                    style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
+                    style={{ boxShadow: "0 0 0 1px rgba(148,163,184,0.15)" }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.boxShadow = `0 20px 40px -12px ${contact.color}30, 0 0 0 1px ${contact.color}25`;
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.boxShadow = "0 0 0 1px rgba(255,255,255,0.06)";
+                      e.currentTarget.style.boxShadow = "0 0 0 1px rgba(148,163,184,0.15)";
                     }}
                   >
                     <div
@@ -170,7 +170,7 @@ export default function ContactPageClient() {
                     </div>
                     <div>
                       <p className="text-slate-500 text-xs uppercase tracking-wide font-medium mb-1">{contact.label}</p>
-                      <p className="text-white font-bold text-lg leading-none mb-1">{contact.value}</p>
+                      <p className="text-slate-900 font-bold text-lg leading-none mb-1">{contact.value}</p>
                       <p className="text-slate-500 text-xs">{contact.desc}</p>
                     </div>
                   </motion.a>
@@ -180,15 +180,15 @@ export default function ContactPageClient() {
               {/* Service area */}
               <div
                 className="glass-card rounded-3xl p-6"
-                style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
+                style={{ boxShadow: "0 0 0 1px rgba(148,163,184,0.15)" }}
               >
                 <div className="flex items-center gap-5">
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 bg-emerald-500/15 border border-emerald-500/25">
-                    <MapPin className="w-6 h-6 text-emerald-400" />
+                    <MapPin className="w-6 h-6 text-emerald-500" />
                   </div>
                   <div>
                     <p className="text-slate-500 text-xs uppercase tracking-wide font-medium mb-1">Service Area</p>
-                    <p className="text-white font-bold text-base leading-snug">Canada-Wide</p>
+                    <p className="text-slate-900 font-bold text-base leading-snug">Canada-Wide</p>
                     <p className="text-slate-500 text-xs mt-1">Serving buyers and distributors across Canada</p>
                   </div>
                 </div>
@@ -202,18 +202,18 @@ export default function ContactPageClient() {
                   border: "1px solid rgba(139,92,246,0.2)",
                 }}
               >
-                <p className="text-white font-bold mb-2">Typical Response Time</p>
-                <p className="text-slate-400 text-sm leading-relaxed">
-                  We respond to all inquiries within <span className="text-purple-400 font-semibold">24 business hours</span>. For urgent orders or large wholesale inquiries, call directly.
+                <p className="text-slate-900 font-bold mb-2">Typical Response Time</p>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  We respond to all inquiries within <span className="text-purple-600 font-semibold">24 business hours</span>. For urgent orders or large wholesale inquiries, call directly.
                 </p>
               </div>
 
               {/* Interest areas */}
-              <div className="glass-card rounded-3xl p-6" style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}>
+              <div className="glass-card rounded-3xl p-6" style={{ boxShadow: "0 0 0 1px rgba(148,163,184,0.15)" }}>
                 <p className="text-slate-500 text-xs uppercase tracking-wide font-medium mb-4">We Help With</p>
                 <div className="space-y-2">
                   {interestedInOptions.map((option) => (
-                    <div key={option} className="flex items-center gap-2 text-sm text-slate-300">
+                    <div key={option} className="flex items-center gap-2 text-sm text-slate-600">
                       <div className="w-1.5 h-1.5 rounded-full bg-purple-500" />
                       {option}
                     </div>
@@ -230,16 +230,16 @@ export default function ContactPageClient() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="glass-card rounded-3xl p-4 sm:p-8"
-              style={{ boxShadow: "0 0 0 1px rgba(255,255,255,0.06)" }}
+              style={{ boxShadow: "0 0 0 1px rgba(148,163,184,0.15)" }}
             >
               <div className="mb-8">
                 <h2
-                  className="text-2xl font-black text-white mb-2"
+                  className="text-2xl font-black text-slate-900 mb-2"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   Send Us a Message
                 </h2>
-                <p className="text-slate-400 text-sm">
+                <p className="text-slate-600 text-sm">
                   Fill out the form and we&apos;ll be in touch within 24 hours.
                 </p>
               </div>
@@ -251,12 +251,12 @@ export default function ContactPageClient() {
                   className="flex flex-col items-center justify-center gap-5 py-16 text-center"
                 >
                   <div className="w-20 h-20 rounded-full bg-emerald-500/20 flex items-center justify-center">
-                    <CheckCircle className="w-10 h-10 text-emerald-400" />
+                    <CheckCircle className="w-10 h-10 text-emerald-500" />
                   </div>
-                  <h3 className="text-2xl font-black text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                  <h3 className="text-2xl font-black text-slate-900" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                     Message Sent!
                   </h3>
-                  <p className="text-slate-400 max-w-sm">
+                  <p className="text-slate-600 max-w-sm">
                     Thanks for reaching out. Danny will get back to you within 24 hours.
                   </p>
                   <button
@@ -270,8 +270,8 @@ export default function ContactPageClient() {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="name" className="block text-xs font-medium text-slate-400 mb-2">
-                        Full Name <span className="text-red-400">*</span>
+                      <label htmlFor="name" className="block text-xs font-medium text-slate-500 mb-2">
+                        Full Name <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="text"
@@ -285,8 +285,8 @@ export default function ContactPageClient() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-xs font-medium text-slate-400 mb-2">
-                        Email <span className="text-red-400">*</span>
+                      <label htmlFor="email" className="block text-xs font-medium text-slate-500 mb-2">
+                        Email <span className="text-red-500">*</span>
                       </label>
                       <input
                         type="email"
@@ -303,7 +303,7 @@ export default function ContactPageClient() {
 
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label htmlFor="phone" className="block text-xs font-medium text-slate-400 mb-2">
+                      <label htmlFor="phone" className="block text-xs font-medium text-slate-500 mb-2">
                         Phone
                       </label>
                       <input
@@ -317,7 +317,7 @@ export default function ContactPageClient() {
                       />
                     </div>
                     <div>
-                      <label htmlFor="company" className="block text-xs font-medium text-slate-400 mb-2">
+                      <label htmlFor="company" className="block text-xs font-medium text-slate-500 mb-2">
                         Company Name
                       </label>
                       <input
@@ -333,8 +333,8 @@ export default function ContactPageClient() {
                   </div>
 
                   <div>
-                    <label htmlFor="interestedIn" className="block text-xs font-medium text-slate-400 mb-2">
-                      I&apos;m Interested In <span className="text-red-400">*</span>
+                    <label htmlFor="interestedIn" className="block text-xs font-medium text-slate-500 mb-2">
+                      I&apos;m Interested In <span className="text-red-500">*</span>
                     </label>
                     <select
                       id="interestedIn"
@@ -346,7 +346,7 @@ export default function ContactPageClient() {
                     >
                       <option value="" disabled>Select an option...</option>
                       {interestedInOptions.map((opt) => (
-                        <option key={opt} value={opt} className="bg-slate-900">
+                        <option key={opt} value={opt} className="bg-white text-slate-900">
                           {opt}
                         </option>
                       ))}
@@ -354,8 +354,8 @@ export default function ContactPageClient() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-xs font-medium text-slate-400 mb-2">
-                      Message <span className="text-red-400">*</span>
+                    <label htmlFor="message" className="block text-xs font-medium text-slate-500 mb-2">
+                      Message <span className="text-red-500">*</span>
                     </label>
                     <textarea
                       id="message"
@@ -423,12 +423,12 @@ export default function ContactPageClient() {
             <div className="absolute inset-0 opacity-10" style={{ background: "radial-gradient(ellipse at center, #10B981, transparent 70%)" }} />
             <div className="relative z-10">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-3 mb-4">
-                <MapPin className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                <h3 className="text-white font-bold text-base sm:text-xl leading-snug" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+                <MapPin className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                <h3 className="text-slate-900 font-bold text-base sm:text-xl leading-snug" style={{ fontFamily: "var(--font-space-grotesk)" }}>
                   Serving Canada-Wide Buyers and Distributors
                 </h3>
               </div>
-              <p className="text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">
+              <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto">
                 Calico Canada ships cleaning chemicals to buyers across all Canadian provinces and territories. Whether you&apos;re in British Columbia, Ontario, Quebec, or anywhere in between — we can supply your needs.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-3 mt-6">

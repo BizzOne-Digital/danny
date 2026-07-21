@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#020617] flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#F4F2F8] flex items-center justify-center px-4">
       <div className="text-center max-w-lg">
         {/* Big 404 */}
         <div
@@ -24,12 +24,12 @@ export default function NotFound() {
         </div>
 
         <h1
-          className="text-2xl sm:text-3xl font-black text-white mb-3 sm:mb-4"
+          className="text-2xl sm:text-3xl font-black text-slate-900 mb-3 sm:mb-4"
           style={{ fontFamily: "var(--font-space-grotesk)" }}
         >
           Page Not Found
         </h1>
-        <p className="text-slate-400 text-base sm:text-lg mb-6 sm:mb-8 px-2">
+        <p className="text-slate-600 text-base sm:text-lg mb-6 sm:mb-8 px-2">
           The page you&apos;re looking for doesn&apos;t exist or has been moved.
         </p>
 
@@ -55,7 +55,6 @@ export default function NotFound() {
           <Link
             href="/shop"
             className="btn-secondary rounded-xl px-8 py-3.5 text-sm font-bold text-center"
-            style={{ color: "white", WebkitTextFillColor: "white" }}
           >
             Browse Products
           </Link>

@@ -7,14 +7,14 @@ import { ArrowRight, Phone, Mail } from "lucide-react";
 export default function HomeCTA() {
   return (
     <section className="relative py-14 md:py-28 overflow-hidden">
-      {/* Animated gradient background */}
+      {/* Soft animated gradient background */}
       <div className="absolute inset-0">
         <motion.div
           animate={{
             background: [
-              "linear-gradient(135deg, #1a0a2e 0%, #020617 50%, #071a0a 100%)",
-              "linear-gradient(135deg, #071a1a 0%, #020617 50%, #1a1a07 100%)",
-              "linear-gradient(135deg, #1a0a2e 0%, #020617 50%, #071a0a 100%)",
+              "linear-gradient(135deg, #F5F3FF 0%, #F4F2F8 50%, #ECFDF5 100%)",
+              "linear-gradient(135deg, #EEF2FF 0%, #F4F2F8 50%, #FFFBEB 100%)",
+              "linear-gradient(135deg, #F5F3FF 0%, #F4F2F8 50%, #ECFDF5 100%)",
             ],
           }}
           transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
@@ -30,7 +30,7 @@ export default function HomeCTA() {
         ].map((orb, i) => (
           <motion.div
             key={i}
-            animate={{ scale: [1, 1.3, 1], opacity: [0.12, 0.2, 0.12] }}
+            animate={{ scale: [1, 1.3, 1], opacity: [0.08, 0.16, 0.08] }}
             transition={{ duration: 4 + i, repeat: Infinity, delay: i * 0.8 }}
             className="absolute rounded-full blur-3xl pointer-events-none"
             style={{
@@ -71,7 +71,7 @@ export default function HomeCTA() {
           </div>
 
           <h2
-            className="text-3xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight mb-5 sm:mb-6"
+            className="text-3xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight mb-5 sm:mb-6"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             Clean smarter.{" "}
@@ -101,7 +101,7 @@ export default function HomeCTA() {
             </span>
           </h2>
 
-          <p className="text-slate-300 text-base sm:text-xl leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto px-2">
+          <p className="text-slate-600 text-base sm:text-xl leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto px-2">
             Join hundreds of Canadian buyers who trust Calico Canada for their cleaning
             chemical supply — home, commercial, and wholesale.
           </p>
@@ -111,7 +111,17 @@ export default function HomeCTA() {
               Shop Products
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/contact" className="btn-secondary rounded-xl text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 justify-center" style={{ color: "white" }}>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-xl text-sm sm:text-base px-6 sm:px-8 py-3.5 sm:py-4 font-semibold transition-all hover:-translate-y-0.5"
+              style={{
+                background: "#ffffff",
+                color: "#6D28D9",
+                WebkitTextFillColor: "#6D28D9",
+                border: "2px solid #8B5CF6",
+                boxShadow: "0 2px 12px rgba(139,92,246,0.15)",
+              }}
+            >
               Contact Calico
             </Link>
           </div>
@@ -120,17 +130,17 @@ export default function HomeCTA() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a
               href="tel:+17789991023"
-              className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
+              className="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors text-sm"
             >
-              <Phone className="w-4 h-4 text-purple-400" />
+              <Phone className="w-4 h-4 text-purple-500" />
               (778) 999-1023
             </a>
-            <div className="hidden sm:block w-px h-4 bg-slate-700" />
+            <div className="hidden sm:block w-px h-4 bg-slate-300" />
             <a
               href="mailto:dannyka7@gmail.com"
-              className="flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm"
+              className="flex items-center gap-2 text-slate-500 hover:text-slate-900 transition-colors text-sm"
             >
-              <Mail className="w-4 h-4 text-blue-400" />
+              <Mail className="w-4 h-4 text-blue-500" />
               dannyka7@gmail.com
             </a>
           </div>

@@ -74,24 +74,24 @@ export default function ShopPage() {
   const activeCat = categories.find((c) => c.id === activeCategory) || categories[0];
 
   return (
-    <div className="min-h-screen bg-[#020617]">
+    <div className="min-h-screen bg-[#F4F2F8]">
       {/* Hero */}
       <section className="relative pt-24 sm:pt-28 pb-10 sm:pb-16 overflow-hidden">
         <div className="absolute inset-0">
           <motion.div
             animate={{
               background: [
-                "radial-gradient(ellipse at 30% 50%, rgba(139,92,246,0.3) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(59,130,246,0.2) 0%, transparent 60%)",
-                "radial-gradient(ellipse at 70% 50%, rgba(16,185,129,0.25) 0%, transparent 60%), radial-gradient(ellipse at 30% 70%, rgba(245,158,11,0.2) 0%, transparent 60%)",
+                "radial-gradient(ellipse at 30% 50%, rgba(139,92,246,0.18) 0%, transparent 60%), radial-gradient(ellipse at 70% 30%, rgba(59,130,246,0.12) 0%, transparent 60%)",
+                "radial-gradient(ellipse at 70% 50%, rgba(16,185,129,0.15) 0%, transparent 60%), radial-gradient(ellipse at 30% 70%, rgba(245,158,11,0.12) 0%, transparent 60%)",
               ],
             }}
             transition={{ duration: 6, repeat: Infinity, repeatType: "reverse" }}
             className="absolute inset-0"
           />
           <div
-            className="absolute inset-0 opacity-[0.03]"
+            className="absolute inset-0 opacity-[0.4]"
             style={{
-              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)`,
+              backgroundImage: `radial-gradient(circle at 1px 1px, rgba(139,92,246,0.2) 1px, transparent 0)`,
               backgroundSize: "40px 40px",
             }}
           />
@@ -115,7 +115,7 @@ export default function ShopPage() {
             </div>
 
             <h1
-              className="text-3xl sm:text-5xl lg:text-7xl font-black text-white tracking-tight mb-4 sm:mb-5"
+              className="text-3xl sm:text-5xl lg:text-7xl font-black text-slate-900 tracking-tight mb-4 sm:mb-5"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Shop Calico{" "}
@@ -131,7 +131,7 @@ export default function ShopPage() {
               </span>
             </h1>
 
-            <p className="text-slate-300 text-base sm:text-xl max-w-2xl mx-auto px-2">
+            <p className="text-slate-600 text-base sm:text-xl max-w-2xl mx-auto px-2">
               Colour-coded cleaning chemicals for home use, DIY crafting, and bulk supply.
             </p>
           </motion.div>
@@ -153,14 +153,14 @@ export default function ShopPage() {
             placeholder="Search products..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white/5 border border-white/10 rounded-2xl pl-11 pr-10 py-3.5 text-white text-sm placeholder-slate-500 focus:border-purple-500/50 focus:bg-white/8 transition-all"
+            className="w-full bg-white border border-slate-200 rounded-2xl pl-11 pr-10 py-3.5 text-slate-900 text-sm placeholder-slate-400 focus:border-purple-400 focus:bg-white transition-all"
             aria-label="Search products"
           />
           {searchQuery && (
             <button
               onClick={() => setSearchQuery("")}
               aria-label="Clear search"
-              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -187,15 +187,15 @@ export default function ShopPage() {
               style={
                 activeCategory === cat.id
                   ? {
-                      backgroundColor: cat.color === "white" ? "rgba(255,255,255,0.15)" : cat.color,
-                      borderColor: cat.color === "white" ? "rgba(255,255,255,0.3)" : cat.color,
+                      backgroundColor: cat.color === "white" ? "#4C1D95" : cat.color,
+                      borderColor: cat.color === "white" ? "#4C1D95" : cat.color,
                       color: "white",
                       boxShadow: cat.color !== "white" ? `0 0 20px ${cat.color}40` : "none",
                     }
                   : {
-                      backgroundColor: "rgba(255,255,255,0.04)",
-                      borderColor: "rgba(255,255,255,0.1)",
-                      color: "#94a3b8",
+                      backgroundColor: "#FFFFFF",
+                      borderColor: "rgba(148,163,184,0.35)",
+                      color: "#64748b",
                     }
               }
             >
@@ -245,10 +245,10 @@ export default function ShopPage() {
             animate={{ opacity: 1 }}
             className="text-center py-24"
           >
-            <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4">
-              <Search className="w-7 h-7 text-slate-600" />
+            <div className="w-16 h-16 rounded-2xl bg-slate-100 flex items-center justify-center mx-auto mb-4">
+              <Search className="w-7 h-7 text-slate-400" />
             </div>
-            <h3 className="text-white font-bold text-xl mb-2">No products found</h3>
+            <h3 className="text-slate-900 font-bold text-xl mb-2">No products found</h3>
             <p className="text-slate-500 text-sm mb-6">
               {searchQuery
                 ? `No results for "${searchQuery}"`

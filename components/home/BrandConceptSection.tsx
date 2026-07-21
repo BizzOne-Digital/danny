@@ -38,11 +38,11 @@ export default function BrandConceptSection() {
   return (
     <section className="relative py-14 md:py-24 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[#0a0f1e]">
+      <div className="absolute inset-0 bg-[#F8F7FC]">
         <div
-          className="absolute inset-0 opacity-[0.04]"
+          className="absolute inset-0 opacity-[0.5]"
           style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)`,
+            backgroundImage: `radial-gradient(circle at 1px 1px, rgba(139,92,246,0.25) 1px, transparent 0)`,
             backgroundSize: "40px 40px",
           }}
         />
@@ -60,7 +60,7 @@ export default function BrandConceptSection() {
             style={{
               background: "rgba(139,92,246,0.1)",
               borderColor: "rgba(139,92,246,0.25)",
-              color: "#C4B5FD",
+              color: "#7C3AED",
             }}
           >
             <span
@@ -75,7 +75,7 @@ export default function BrandConceptSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 sm:mb-5 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4 sm:mb-5 tracking-tight"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             Chemistry in{" "}
@@ -96,7 +96,7 @@ export default function BrandConceptSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed"
+            className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed"
           >
             Calico Canada was built on a simple idea: great cleaning chemistry should be easy to
             identify, easy to use, and available in the right format for every buyer.
@@ -116,12 +116,12 @@ export default function BrandConceptSection() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
                 whileHover={{ y: -6 }}
                 className="glass-card rounded-3xl p-6 group cursor-default"
-                style={{ boxShadow: `0 0 0 1px rgba(255,255,255,0.06)` }}
+                style={{ boxShadow: `0 0 0 1px rgba(148,163,184,0.15)` }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.boxShadow = `0 20px 40px -12px ${concept.color}35, 0 0 0 1px ${concept.color}25`;
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = `0 0 0 1px rgba(255,255,255,0.06)`;
+                  e.currentTarget.style.boxShadow = `0 0 0 1px rgba(148,163,184,0.15)`;
                 }}
               >
                 <div
@@ -132,12 +132,12 @@ export default function BrandConceptSection() {
                 </div>
 
                 <h3
-                  className="text-white font-bold text-base mb-3 leading-snug"
+                  className="text-slate-900 font-bold text-base mb-3 leading-snug"
                   style={{ fontFamily: "var(--font-space-grotesk)" }}
                 >
                   {concept.title}
                 </h3>
-                <p className="text-slate-400 text-sm leading-relaxed">{concept.description}</p>
+                <p className="text-slate-600 text-sm leading-relaxed">{concept.description}</p>
 
                 {/* Bottom accent line */}
                 <div

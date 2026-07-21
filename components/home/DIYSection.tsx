@@ -14,9 +14,9 @@ const steps = [
 export default function DIYSection() {
   return (
     <section className="relative py-14 md:py-24 overflow-hidden">
-      <div className="absolute inset-0 bg-[#060a18]" />
+      <div className="absolute inset-0 bg-[#F8F7FC]" />
       <div
-        className="absolute inset-0 opacity-15"
+        className="absolute inset-0 opacity-40"
         style={{
           background: "radial-gradient(ellipse at 20% 60%, #8B5CF625 0%, transparent 55%)",
         }}
@@ -35,7 +35,7 @@ export default function DIYSection() {
             <div
               className="rounded-3xl overflow-hidden p-5 sm:p-8 relative"
               style={{
-                background: "linear-gradient(135deg, #1a0a2e, #0a0f1e)",
+                background: "linear-gradient(135deg, #F5F3FF, #EEF2FF)",
                 border: "1px solid rgba(139,92,246,0.25)",
               }}
             >
@@ -113,7 +113,7 @@ export default function DIYSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4 sm:mb-5"
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4 sm:mb-5"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
               Make Your{" "}
@@ -134,7 +134,7 @@ export default function DIYSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-slate-300 text-base leading-relaxed mb-8"
+              className="text-slate-600 text-base leading-relaxed mb-8"
             >
               Join the growing community of DIY detergent crafters who use Calico Canada&apos;s
               base chemicals to create custom cleaning formulas. From laundry soap to
@@ -168,7 +168,7 @@ export default function DIYSection() {
                         >
                           {step.step}
                         </span>
-                        <p className="text-white font-semibold text-sm">{step.title}</p>
+                        <p className="text-slate-900 font-semibold text-sm">{step.title}</p>
                       </div>
                       <p className="text-slate-500 text-xs mt-0.5">{step.desc}</p>
                     </div>

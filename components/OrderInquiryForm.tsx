@@ -73,10 +73,10 @@ export default function OrderInquiryForm({ items, onSuccess }: Props) {
         <div className="w-16 h-16 rounded-full bg-emerald-500/20 flex items-center justify-center">
           <CheckCircle className="w-8 h-8 text-emerald-400" />
         </div>
-        <h3 className="text-xl font-bold text-white" style={{ fontFamily: "var(--font-space-grotesk)" }}>
+        <h3 className="text-xl font-bold text-slate-900" style={{ fontFamily: "var(--font-space-grotesk)" }}>
           Order Inquiry Sent!
         </h3>
-        <p className="text-slate-400 text-sm">
+        <p className="text-slate-600 text-sm">
           We&apos;ve received your order and will contact you with pricing details shortly.
         </p>
       </motion.div>
@@ -84,19 +84,19 @@ export default function OrderInquiryForm({ items, onSuccess }: Props) {
   }
 
   const inputClass =
-    "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder-slate-500 focus:border-purple-500/50 focus:bg-white/8 transition-all duration-200";
+    "w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm placeholder-slate-400 focus:border-purple-400 focus:bg-white transition-all duration-200";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="glass-card rounded-xl p-3 mb-4">
-        <p className="text-slate-400 text-xs text-center">
+        <p className="text-slate-500 text-xs text-center">
           {items.length} item{items.length !== 1 ? "s" : ""} in your inquiry
         </p>
       </div>
 
       <div>
-        <label htmlFor="customerName" className="block text-xs font-medium text-slate-400 mb-1.5">
-          Full Name <span className="text-red-400">*</span>
+        <label htmlFor="customerName" className="block text-xs font-medium text-slate-500 mb-1.5">
+          Full Name <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -111,8 +111,8 @@ export default function OrderInquiryForm({ items, onSuccess }: Props) {
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-xs font-medium text-slate-400 mb-1.5">
-          Email <span className="text-red-400">*</span>
+        <label htmlFor="email" className="block text-xs font-medium text-slate-500 mb-1.5">
+          Email <span className="text-red-500">*</span>
         </label>
         <input
           type="email"
@@ -127,7 +127,7 @@ export default function OrderInquiryForm({ items, onSuccess }: Props) {
       </div>
 
       <div>
-        <label htmlFor="phone" className="block text-xs font-medium text-slate-400 mb-1.5">
+        <label htmlFor="phone" className="block text-xs font-medium text-slate-500 mb-1.5">
           Phone
         </label>
         <input
@@ -142,7 +142,7 @@ export default function OrderInquiryForm({ items, onSuccess }: Props) {
       </div>
 
       <div>
-        <label htmlFor="company" className="block text-xs font-medium text-slate-400 mb-1.5">
+        <label htmlFor="company" className="block text-xs font-medium text-slate-500 mb-1.5">
           Company Name
         </label>
         <input
@@ -157,7 +157,7 @@ export default function OrderInquiryForm({ items, onSuccess }: Props) {
       </div>
 
       <div>
-        <label htmlFor="address" className="block text-xs font-medium text-slate-400 mb-1.5">
+        <label htmlFor="address" className="block text-xs font-medium text-slate-500 mb-1.5">
           Delivery Address
         </label>
         <input
@@ -172,7 +172,7 @@ export default function OrderInquiryForm({ items, onSuccess }: Props) {
       </div>
 
       <div>
-        <label htmlFor="notes" className="block text-xs font-medium text-slate-400 mb-1.5">
+        <label htmlFor="notes" className="block text-xs font-medium text-slate-500 mb-1.5">
           Order Notes
         </label>
         <textarea

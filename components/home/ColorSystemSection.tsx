@@ -73,7 +73,7 @@ export default function ColorSystemSection() {
   const active = colorCategories[activeIndex];
 
   return (
-    <section className="relative py-24 overflow-hidden" style={{ background: "#07081a" }}>
+    <section className="relative py-24 overflow-hidden" style={{ background: "#F8F7FC" }}>
       {/* Background glow based on active color */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -106,7 +106,7 @@ export default function ColorSystemSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl sm:text-5xl font-black text-white tracking-tight mb-4"
+            className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
             Find Your{" "}
@@ -127,7 +127,7 @@ export default function ColorSystemSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-slate-400 text-lg max-w-xl mx-auto"
+            className="text-slate-600 text-lg max-w-xl mx-auto"
           >
             Four colour categories. One cohesive system. Instantly identify the right chemical for every job.
           </motion.p>
@@ -204,7 +204,7 @@ export default function ColorSystemSection() {
                     {active.tag.charAt(0)}
                   </div>
                   <h3
-                    className="text-3xl font-black text-white mb-2"
+                    className="text-3xl font-black text-slate-900 mb-2"
                     style={{ fontFamily: "var(--font-space-grotesk)" }}
                   >
                     {active.tag}
@@ -256,13 +256,13 @@ export default function ColorSystemSection() {
               </div>
 
               <h3
-                className="text-3xl sm:text-4xl font-black text-white mb-4 tracking-tight"
+                className="text-3xl sm:text-4xl font-black text-slate-900 mb-4 tracking-tight"
                 style={{ fontFamily: "var(--font-space-grotesk)" }}
               >
                 {active.tag} Category
               </h3>
 
-              <p className="text-slate-300 text-base leading-relaxed mb-8">
+              <p className="text-slate-600 text-base leading-relaxed mb-8">
                 {active.description}
               </p>
 
@@ -272,7 +272,7 @@ export default function ColorSystemSection() {
                 </p>
                 <ul className="space-y-2">
                   {active.products.map((product) => (
-                    <li key={product} className="flex items-center gap-3 text-slate-300 text-sm">
+                    <li key={product} className="flex items-center gap-3 text-slate-600 text-sm">
                       <div
                         className="w-1.5 h-1.5 rounded-full flex-shrink-0"
                         style={{ backgroundColor: active.color }}
